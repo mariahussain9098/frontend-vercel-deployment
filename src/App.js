@@ -1,25 +1,78 @@
-import logo from './logo.svg';
-import './App.css';
+// import React from "react";
+// import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+// import NavBar from "./components/common/NavBar";
+// import HomePage from "./components/pages/HomePage";
+// import LoginPage from "./components/pages/LoginPage";
+// import BlogCreationPage from "./components/pages/BlogCreationPage";
+// import ProfilePage from "./components/pages/ProfilePage";
+// import MyBlogsPage from "./components/pages/MyBlogsPage";
+// import PageNotFound from "./components/pages/PageNotFound";
+// import ProtectedRoute from "./components/common/ProtectedRoute";
+// import { ContextProvider } from "./context/Context";
 
-function App() {
+// const App = () => {
+//   return (
+//     <ContextProvider>
+//       <Router>
+//         <NavBar />
+//         <Routes>
+//           <Route path="/" element={<HomePage />} />
+//           <Route path="/login" element={<LoginPage />} />
+//           <Route path="/create-blog" element={<ProtectedRoute><BlogCreationPage /></ProtectedRoute>} />
+//           <Route path="/profile" element={<ProtectedRoute><ProfilePage /></ProtectedRoute>} />
+//           <Route path="/my-blogs" element={<ProtectedRoute><MyBlogsPage /></ProtectedRoute>} />
+//           <Route path="*" element={<PageNotFound />} />
+//         </Routes>
+//       </Router>
+//     </ContextProvider>
+//   );
+// };
+
+// export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// App.js
+
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import NavBar from "./components/common/NavBar";
+import HomePage from "./components/pages/HomePage";
+import LoginPage from "./components/pages/LoginPage";
+import BlogCreationPage from "./components/pages/BlogCreationPage";
+import ProfilePage from "./components/pages/ProfilePage";
+import MyBlogsPage from "./components/pages/MyBlogsPage";
+import PageNotFound from "./components/pages/PageNotFound";
+import ProtectedRoute from "./components/common/ProtectedRoute";
+import { ContextProvider } from "./context/Context";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ContextProvider>
+      <Router>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/create-blog" element={<ProtectedRoute><BlogCreationPage /></ProtectedRoute>} />
+          <Route path="/profile" element={<ProtectedRoute><ProfilePage /></ProtectedRoute>} />
+          <Route path="/my-blogs" element={<ProtectedRoute><MyBlogsPage /></ProtectedRoute>} />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      </Router>
+    </ContextProvider>
   );
-}
+};
 
 export default App;
